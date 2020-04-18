@@ -16,8 +16,9 @@ pygmentscodefencesguesssyntax = true
 #disqusShortname = "yourdiscussshortname"
 
 [params]
-    author = "井上 研一"
-    info = "Full Stack DevOps e Mágico"
+    author = "Inoue, Kenichi"
+    copyrightAuthor = "Inoue, Kenichi"
+    info = "Full Stack Developer and Slasher"
     description = "Sítio pessoal de João Ninguém"
     keywords = "blog,desenvolvedor,pessoal"
     #avatarurl = "images/avatar.jpg"
@@ -95,29 +96,21 @@ pygmentscodefencesguesssyntax = true
 [languages]
     [languages.ja]
         languagename = "日本語"
-        # title = "井上 研一"
+
+        [languages.ja.params]
+            author = "井上 研一"
 
         [languages.ja.menu]
 
             [[languages.ja.menu.main]]
             name = "プロフィール"
             weight = 1
-            url = "profile/"
-
-            [[languages.ja.menu.main]]
-            name = "プロジェクト"
-            weight = 2
-            url = "projects/"
-
-            [[languages.ja.menu.main]]
-            name = "ブログ"
-            weight = 3
-            url = "posts/"
+            url = "profile.html"
 
             [[languages.ja.menu.main]]
             name = "お問い合わせ"
             weight = 5
-            url = "contact/"
+            url = "contact.html"
 
     [languages.en]
         languagename = "English"
@@ -134,16 +127,6 @@ pygmentscodefencesguesssyntax = true
             name = "Profile"
             weight = 1
             url = "profile/"
-
-            #[[languages.en.menu.main]]
-            #name = "Blog"
-            #weight = 2
-            #url = "posts/"
-
-            #[[languages.en.menu.main]]
-            #name = "Projects"
-            #weight = 3
-            #url = "projects/"
 
             [[languages.en.menu.main]]
             name = "Contact me"
