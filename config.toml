@@ -2,7 +2,7 @@ baseURL = "https://inoccu.github.io/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
 hasCJKLanguage = true
-title = "Inoue, Kenichi"
+title = "INOUE Kenichi"
 
 theme = "coder"
 
@@ -16,8 +16,8 @@ pygmentscodefencesguesssyntax = true
 #disqusShortname = "yourdiscussshortname"
 
 [params]
-    author = "Inoue, Kenichi"
-    copyrightAuthor = "Inoue, Kenichi"
+    author = "INOUE Kenichi"
+    copyrightAuthor = "INOUE Kenichi"
     info = "Full Stack Developer and Slasher"
     description = "Sítio pessoal de João Ninguém"
     keywords = "blog,desenvolvedor,pessoal"
@@ -111,24 +111,3 @@ pygmentscodefencesguesssyntax = true
             name = "お問い合わせ"
             weight = 5
             url = "contact.html"
-
-    [languages.en]
-        languagename = "English"
-
-        [languages.en.params]
-            author = "Inoue, Kenichi"
-            description = "Inoue, Kenichi's personal website"
-            keywords = "blog,developer,personal"
-            info = "Full Stack DevOps and Magician"
-
-        [languages.en.menu]
-
-            [[languages.en.menu.main]]
-            name = "Profile"
-            weight = 1
-            url = "profile/"
-
-            [[languages.en.menu.main]]
-            name = "Contact me"
-            weight = 5
-            url = "contact/"
