@@ -1,9 +1,11 @@
 ---
-title: 井上 研一 プロフィール
+title: プロフィール
 url: profile.html
 ---
 
 ![IMG_0089](assets/IMG_0089.jpg)
+
+## 井上 研一 (INOUE Kenichi)
 
 ITエンジニア／経済産業省推進資格ITコーディネータ。  
 [株式会社ビビンコ](https://vivinko.com)代表取締役、[Tech Garden School](https://techgardenschool.com)講師。  
