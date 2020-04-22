@@ -34,7 +34,7 @@ AIサービスの先駆けでもある「Watson（ワトソン）」。近年急
 本書はビジネスマンや文系の学生さん向けに、人工知能の全体像を簡潔かつ平易に解説。現在の技術で本当は何ができ、何ができないのかを、自分で見抜けるように導きます。さらにIBMのワトソンを無償枠で動かし、人工知能の働きを体感。「だったら会社のアレができるかも・・・」といったアイデアが触発されるかもしれません。  
 [出版社によるサポートサイト](http://www.ric.co.jp/book/contents/book_1071.html)
 
-### 初めてのWatson ～APIの用例と実践プログラミング～
+### 初めてのWatson ～APIの用例と実践プログラミング
 
 ![初めてのWatson](assets/book1052.gif)
 
@@ -62,3 +62,8 @@ AIサービスの先駆けでもある「Watson（ワトソン）」。近年急
 最新用語解説「AI（人工知能）」を執筆しました。  
 [出版社によるサポートサイト](https://www.compass-it.jp/backnumber/2603)
 
+## オンラインメディア
+
+- 東洋経済オンライン [｢何となくAI ｣､実はアルゴリズム活用だった](https://toyokeizai.net/articles/-/286772)（2019年6月）
+- GMOグループ Z.com ZLOG [井上研一先生コラム](https://hosting.z.com/jp/category/z-log/column/)（2017年1月～10月）
+- @IT [OSS「JobScheduler」で実現するこれからの運用自動化](https://www.atmarkit.co.jp/ait/articles/1401/20/news140.html)（2014年1月）
