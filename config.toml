@@ -1,0 +1,119 @@
+baseURL = "https://inoccu.github.io/"
+languageCode = "ja"
+defaultContentLanguage = "ja"
+hasCJKLanguage = true
+title = "INOUE Kenichi"
+
+theme = "coder"
+
+paginate = 20
+canonifyurls = true
+
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+#disqusShortname = "yourdiscussshortname"
+
+[params]
+    author = "INOUE Kenichi"
+    copyrightAuthor = "INOUE Kenichi"
+    info = "Full Stack Developer and Slasher"
+    typed = "Full Stack Developer, IT Consultant, IT Coordinator, Founder &amp; CEO, Freelancer, Book Writer, Lecturer, Slasher (means slash worker)"
+    #description = ""
+    #keywords = "blog,pessonal"
+    #avatarurl = "images/avatar.jpg"
+    gravatar = "inoccu@gmail.com"
+    footercontent = ""
+
+    dateformat = "January 2, 2006"
+
+    hideFooter = false
+    hideCredits = true
+    hideCopyright = false
+    since = 2020
+
+    # Git Commit in Footer, uncomment the line below to enable it.
+    commit = "https://github.com/inoccu/inoccu.github.io/"
+
+    rtl = false
+
+    # Specify light/dark colorscheme
+    # Supported values:
+    # "auto" (use preference set by browser)
+    # "dark" (dark background, light foreground)
+    # "light" (light background, dark foreground) (default)
+    colorscheme = "auto"
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+    # Custom CSS
+    custom_css = ['css/custom.css']
+
+    # Custom JS
+    custom_js = []
+
+# If you want to use fathom(https://usefathom.com) for analytics, add this section
+[params.fathomAnalytics]
+    siteID = "ABCDE"
+    # Default value is cdn.usefathom.com, overwrite this if you are self-hosting
+    serverURL = "analytics.example.com"
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 1
+    url = "https://twitter.com/inoccu"
+[[params.social]]
+    name = "Facebook"
+    icon = "fab fa-facebook"
+    weight = 2
+    url = "https://www.facebook.com/kenichi.inoue"
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 3
+    url = "https://github.com/inoccu"
+[[params.social]]
+    name = "Note"
+    icon = "far fa-sticky-note"
+    weight = 4
+    url = "https://note.com/inoccu"
+[[params.social]]
+    name = "RSS"
+    icon = "fas fa-rss"
+    weight = 5
+    url = "https://inoccu.github.io/index.xml"
+    rel = "alternate"
+    type = "application/rss+xml"
+
+
+[languages]
+    [languages.ja]
+        languagename = "日本語"
+
+        [languages.ja.params]
+            author = "井上 研一"
+
+        [languages.ja.menu]
+
+            [[languages.ja.menu.main]]
+            name = "プロフィール"
+            weight = 1
+            url = "profile.html"
+
+            [[languages.ja.menu.main]]
+            name = "執筆"
+            weight = 2
+            url = "writing.html"
+
+            [[languages.ja.menu.main]]
+            name = "お問い合わせ"
+            weight = 5
+            url = "contact.html"
