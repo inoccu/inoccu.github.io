@@ -3,7 +3,7 @@ title: プロフィール
 url: profile.html
 ---
 
-![ITC Conference 2019にて](assets/IMG_0089.jpg)
+![IMGP0042](assets/IMGP0042.JPG)
 
 ## 井上 研一 (INOUE Kenichi)
 

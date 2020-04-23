@@ -115,6 +115,11 @@ pygmentscodefencesguesssyntax = true
             url = "writing.html"
 
             [[languages.ja.menu.main]]
+            name = "登壇"
+            weight = 3
+            url = "speaking.html"
+
+            [[languages.ja.menu.main]]
             name = "お問い合わせ"
             weight = 5
             url = "contact.html"
