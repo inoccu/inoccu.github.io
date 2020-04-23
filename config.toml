@@ -1,4 +1,4 @@
-baseURL = "https://inoccu.github.io/"
+baseURL = "https://inoccu.com/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
 hasCJKLanguage = true
@@ -90,7 +90,7 @@ pygmentscodefencesguesssyntax = true
     name = "RSS"
     icon = "fas fa-rss"
     weight = 5
-    url = "https://inoccu.github.io/index.xml"
+    url = "https://inoccu.com/index.xml"
     rel = "alternate"
     type = "application/rss+xml"
 
