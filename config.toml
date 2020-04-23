@@ -4,7 +4,7 @@ defaultContentLanguage = "ja"
 hasCJKLanguage = true
 title = "INOUE Kenichi"
 
-theme = "coder"
+theme = "coder-slasher"
 
 paginate = 20
 canonifyurls = true
