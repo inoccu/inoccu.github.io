@@ -19,11 +19,11 @@ pygmentscodefencesguesssyntax = true
     author = "INOUE Kenichi"
     copyrightAuthor = "INOUE Kenichi"
     info = "Full Stack Developer and Slasher"
-    typed = "Full Stack Developer, IT Consultant, IT Coordinator, Founder &amp; CEO, Freelancer, Book Writer, Lecturer, Slasher (means slash worker)"
+    typed = "Full Stack Developer, IT Consultant, IT Coordinator, Founder &amp; CEO, Freelancer, Book Writer, Lecturer, Slasher (slash worker)"
     #description = ""
     #keywords = "blog,pessonal"
-    #avatarurl = "images/avatar.jpg"
-    gravatar = "inoccu@gmail.com"
+    avatarurl = "/images/avatar.jpg"
+    #gravatar = "inoccu@gmail.com"
     footercontent = ""
 
     twitter = "inoccu"
@@ -36,7 +36,7 @@ pygmentscodefencesguesssyntax = true
     since = 2020
 
     # Git Commit in Footer, uncomment the line below to enable it.
-    commit = "https://github.com/inoccu/inoccu.github.io/"
+    commit = "https://github.com/inoccu/inoccu.github.io"
 
     rtl = false
 
