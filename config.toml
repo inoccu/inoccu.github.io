@@ -26,6 +26,8 @@ pygmentscodefencesguesssyntax = true
     gravatar = "inoccu@gmail.com"
     footercontent = ""
 
+    twitter = "inoccu"
+
     dateformat = "January 2, 2006"
 
     hideFooter = false
