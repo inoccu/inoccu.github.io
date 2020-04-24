@@ -1,3 +1,8 @@
+.typed-hedding {
+    display: inline-block;
+    width: 400px;
+}
+
 .typed {
     padding-bottom: 4px;
     letter-spacing: 1px;
