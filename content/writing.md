@@ -5,6 +5,8 @@ url: writing.html
 
 井上研一が執筆した書籍や雑誌記事などを紹介します。
 
+Amazon.co.jp著者ページから、書籍を購入することができます。
+
 - [Amazon.co.jp 著者ページ](https://www.amazon.co.jp/~/e/B01M0RV6DK)
 
 ## 書籍
