@@ -14,7 +14,6 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 disqusShortname = "inoccu"
-
 googleAnalytics = "UA-2794204-22"
 
 [params]
@@ -29,6 +28,7 @@ googleAnalytics = "UA-2794204-22"
     footercontent = ""
 
     twitter = "inoccu"
+    gcs = "004792012274362065167:4kdxj_mx6qq"
 
     dateformat = "January 2, 2006"
 
