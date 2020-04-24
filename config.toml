@@ -89,12 +89,10 @@ googleAnalytics = "UA-2794204-22"
     weight = 4
     url = "https://note.com/inoccu"
 [[params.social]]
-    name = "RSS"
-    icon = "fas fa-rss"
+    name = "WordPress"
+    icon = "fab fa-wordpress"
     weight = 5
-    url = "https://inoccu.com/index.xml"
-    rel = "alternate"
-    type = "application/rss+xml"
+    url = "https://inoccu.net/blog/"
 
 
 [languages]
