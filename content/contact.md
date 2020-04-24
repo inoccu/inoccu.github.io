@@ -3,8 +3,12 @@ title: お問い合わせ
 url: contact.html
 ---
 
-お問い合わせは、[inoccu@gmail.com](mailto:inoccu@gmail.com)までメールいただくか、[株式会社ビビンコのお問い合わせページ](https://vivinko.com/contact)にてご連絡ください。
+私（井上研一）へのお問い合わせは、下記のいずれかにお願いします。
 
-または、下記SNSへのメッセージでも構いません。
+- メール: [inoccu@gmail.com](mailto:inoccu@gmail.com)
+- お問い合わせフォーム: [株式会社ビビンコ](https://vivinko.com/contact)
 
-Twitter [@inoccu](https://twitter.com/inoccu/)
+または、下記SNSでメッセージをいただいても構いません。
+
+- Twitter: [@inoccu](https://twitter.com/inoccu/)
+
