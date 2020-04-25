@@ -11,15 +11,16 @@ AI・IoTに強いITコーディネータとして、日本全国で登壇させ�
 
 ## 講師（研修等）
 
-- Tech Garden School 講師
-- ITコーディネータ協会主催研修「ITCのための実践AI〜AIビジネスを支援できるITCになろう〜」
-- ITコーディネータ協会主催研修「ITコンサルタントのためのデータ分析体験研修」
+- [Tech Garden School](https://techgardenschool.com/) 講師
+- ITコーディネータ協会主催研修[「ITCのための実践AI〜AIクラウド体験研修〜」](https://www.itc.or.jp/foritc/seminar/ai_cloud.html)
+- ITコーディネータ協会主催研修[「ITCのための実践AI～AIプロジェクト実践研修～」](https://www.itc.or.jp/foritc/seminar/ai_jissen.html)
+- ITコーディネータ協会主催研修[「ITコンサルタントのためのデータ分析体験研修」](https://www.itc.or.jp/foritc/seminar/ai_data.html)
 - SEプラス主催研修（SEカレッジ）「Watsonで体感するAIプロジェクト入門」
 - SEプラス主催研修（SEカレッジ）「Pythonで活用するIBM Watson」
 - 山形県ICT実践人材育成協議会「AIクラウドサービス実践活用研修」
 - 富山県総合情報センター「実践AI研修」
 - 小学校・中学校・高等学校教職員対象 研修会「AI入門講座」、「AI講座（初級編・発展編）」
-- 早稲田文理専門学校「AIビジネスの理論と実践」研修＜履修証明プログラム＞
+- 早稲田文理専門学校「AIビジネスの理論と実践」研修 ＜履修証明プログラム＞
 - 沖縄県情報産業協会iTAP「ITコンサルタントのための実践AI」
 - リックテレコム主催「コンタクトセンターのためのAI入門講座」
 - リックテレコム主催「作ってわかるWatson ハンズオンセミナー」
