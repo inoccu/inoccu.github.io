@@ -1,0 +1,51 @@
+author = "Inoue, Ken'ichi"
+authorlatin = "Inoue, Ken'ichi"
+
+description = ""
+keywords = ""
+
+#avatarurl = "/images/avatar.jpg"
+gravatar = "inoccu@gmail.com"
+typed = "Full Stack Developer, IT Consultant, IT Coordinator, Founder &amp; CEO, Freelancer, Book Writer, Lecturer, Slasher (slash worker)"
+
+twitter = "inoccu"
+gcs = "004792012274362065167:4kdxj_mx6qq"
+
+hidefooter = false
+hidecredits = true
+hidecopyright = false
+since = 2020
+
+commit = "https://github.com/inoccu/inoccu.github.io"
+
+rtl = false
+colorschme = "light"    # auto, dark, light
+maxseealsoitems = 5
+custom_css = ['/css/custom.css']
+custom_js = []
+
+[[social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 1
+    url = "https://twitter.com/inoccu"
+[[social]]
+    name = "Facebook"
+    icon = "fab fa-facebook"
+    weight = 2
+    url = "https://www.facebook.com/kenichi.inoue"
+[[social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 3
+    url = "https://github.com/inoccu"
+[[social]]
+    name = "Note"
+    icon = "far fa-sticky-note"
+    weight = 4
+    url = "https://note.com/inoccu"
+[[social]]
+    name = "WordPress"
+    icon = "fab fa-wordpress"
+    weight = 5
+    url = "https://inoccu.net/blog/"

@@ -1,0 +1,19 @@
+[[main]]
+name = "プロフィール"
+weight = 1
+url = "/profile.html"
+
+[[main]]
+name = "執筆"
+weight = 2
+url = "/writing.html"
+
+[[main]]
+name = "登壇"
+weight = 3
+url = "/speaking.html"
+
+[[main]]
+name = "お問い合わせ"
+weight = 4
+url = "/contact.html"

@@ -2,7 +2,6 @@ baseURL = "https://inoccu.com/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
 hasCJKLanguage = true
-title = "INOUE Kenichi"
 
 theme = "coder-slasher"
 
@@ -17,8 +16,8 @@ disqusShortname = "inoccu"
 googleAnalytics = "UA-2794204-22"
 
 [params]
-    author = "INOUE Kenichi"
-    copyrightAuthor = "INOUE Kenichi"
+    author = "Inoue, Ken'ichi"
+    copyrightauthor = "Inoue, Ken'ichi"
     info = "Full Stack Developer and Slasher"
     typed = "Full Stack Developer, IT Consultant, IT Coordinator, Founder &amp; CEO, Freelancer, Book Writer, Lecturer, Slasher (slash worker)"
     #description = ""

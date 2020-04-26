@@ -1,0 +1,20 @@
+baseURL = "https://inoccu.com/"
+title = "INOUE, Ken'ichi"
+canonifyURLs = true
+paginate = 20
+
+defaultContentLanguage = "ja"
+hasCJKLanguage = true
+
+theme = "coder-slasher"
+
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusshortname = "inoccu"
+googleAnalytics = "UA-2794204-22"
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
