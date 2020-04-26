@@ -33,6 +33,17 @@ ITエンジニア／経済産業省推進資格ITコーディネータ。
   ※IoT＋AIもくもく勉強会・北九州でIoTグループとして
 - IBM Champion for 2018
 
+### 記事掲載
+
+- [HINTs 生産性PULS北九州 MEET UP INNOVATORS](http://ssl.city.kitakyushu.lg.jp/page/seisansei-up/innovators/05.html)  
+  ※インタビュー記事（2020年2月）
+- [日刊工業新聞「陳列トレーが在庫数カウント ビビンコなど」](https://www.nikkan.co.jp/articles/view/00540284)  
+  ※展示会出展に関する取材記事（2019年12月）
+- [毎日新聞「IoTで商機のがさずパンを補充 焼くッチャ君 ベンチャーが実証実験」](https://mainichi.jp/articles/20190406/k00/00m/020/111000c)  
+  ※実証実験に関する取材記事（2019年4月）
+- [日刊工業新聞「茨城県IoT推進ラボ 事例報告会と見学会開く」](https://www.nikkan.co.jp/articles/view/503986)  
+  ※ITコーディネータとしての登壇に関する記事（2019年1月）
+
 ### 委員等
 
 - 文部科学省委託事業 学校法人中央情報学園 早稲田文理専門学校「専修学校による地域産業中核的人材養成事業」人工知能（AI）分野中核的人材育成のための首都圏産学連携協議会 委員（2017～2019年度）

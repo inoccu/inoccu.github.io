@@ -5,9 +5,10 @@ url: writing.html
 
 井上研一が執筆した書籍や雑誌記事などを紹介します。
 
-Amazon.co.jp著者ページから、書籍を購入することができます。
-
-- [Amazon.co.jp 著者ページ](https://www.amazon.co.jp/~/e/B01M0RV6DK)
+- [Amazon.co.jp 著者ページ](https://www.amazon.co.jp/~/e/B01M0RV6DK)　※書籍を購入することができます
+- [国立国会図書館典拠データ](https://id.ndl.go.jp/auth/ndlna/001247287)
+- [VIAF バーチャル国際典拠ファイル](http://viaf.org/viaf/171147965879084082542)
+- [CiNii著者ページ](https://ci.nii.ac.jp/author/DA18799768)
 
 ## 書籍
 
