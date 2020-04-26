@@ -4,8 +4,8 @@ authorlatin = "Inoue, Ken'ichi"
 description = ""
 keywords = ""
 
-#avatarurl = "/images/avatar.jpg"
-gravatar = "inoccu@gmail.com"
+avatarurl = "/images/avatar.jpg"
+#gravatar = "inoccu@gmail.com"
 typed = "Full Stack Developer, IT Consultant, IT Coordinator, Founder &amp; CEO, Freelancer, Book Writer, Lecturer, Slasher (slash worker)"
 
 twitter = "inoccu"
