@@ -11,6 +11,8 @@ typed = "Full Stack Developer, IT Consultant, IT Coordinator, Founder &amp; CEO,
 twitter = "inoccu"
 gcs = "004792012274362065167:4kdxj_mx6qq"
 
+dateformat = "2006-01-02"
+
 hidefooter = false
 hidecredits = true
 hidecopyright = false

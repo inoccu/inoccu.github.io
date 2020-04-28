@@ -3,6 +3,8 @@ title = "INOUE, Ken'ichi"
 canonifyURLs = true
 paginate = 20
 
+buildFuture = true
+
 defaultContentLanguage = "ja"
 hasCJKLanguage = true
 
