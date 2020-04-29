@@ -21,4 +21,4 @@ url = "/docs/"
 [[main]]
 name = "お問い合わせ"
 weight = 10
-url = "/contact.html"
+url = "/contact/"
