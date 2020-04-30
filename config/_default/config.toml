@@ -20,3 +20,8 @@ googleAnalytics = "UA-2794204-22"
 [taxonomies]
     category = "categories"
     tag = "tags"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
