@@ -7,7 +7,7 @@ math: true
 
 ## 単回帰分析
 
-anscombeデータセットを用いた単回帰分析を行う。
+anscombeデータセットを用いた、単回帰分析を行う。
 
 ```python
 import seaborn as sns
