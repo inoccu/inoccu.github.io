@@ -71,7 +71,7 @@ print(str_format % (iris.target_names[2], np.mean(xc), np.std(xc), np.mean(yc), 
 一方、花びらの長さの分布は平均がずれており（特にsetosaとversicolor）、分散が小さいため、判別に適している。
 
 花びらの長さについて、setosaとversicolorの平均値からの距離を求め、判別を試みる。  
-距離$d$は、次式で求める。$\bar{x}$は$x$の平均値、$s^2$は分散である。
+距離$d$は、次式で求める。$\bar{x}$は$x$の平均値、$s^2$は標準偏差である。
 $$
 d = \frac{(x-\bar{x})^2}{s^2}
 $$
