@@ -75,6 +75,7 @@ print(str_format % (iris.target_names[2], np.mean(xc), np.std(xc), np.mean(yc), 
 $$
 d = \frac{(x-\bar{x})^2}{s^2}
 $$
+距離が短い方に判別される。
 
 ```python
 for i in range(0, 100):
@@ -92,3 +93,49 @@ for i in range(0, 100):
 （後略）
 ```
 
+## 線形判別分析
+versicolorとvirginicaの2品種について、線形判別分析（Linear Discriminant Analysis）を行う。
+
+```python
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+
+x = pd.concat([b.drop('target', axis=1), c.drop('target', axis=1)], axis=0).values
+y = pd.concat([b['target'], c['target']], axis=0).values
+
+lda = LinearDiscriminantAnalysis()
+lda.fit(x, y)
+print('係数', lda.scalings_)
+
+# グループの平均と係数の線形結合の平均が定数値
+cv = np.mean(np.dot(lda.means_, lda.scalings_))
+print('定数値', cv)
+```
+
+```
+係数 [[-1.63793744]
+ [ 3.15236795]]
+定数値 5.208752927587185
+```
+
+次の線形判別式が得られた。
+$$
+z = -1.64x_1 + 3.15x_2 - 5.21
+$$
+
+```python
+for i in range(len(x)):
+    result = x[i][0] * lda.scalings_[0] + x[i][1] * lda.scalings_[1] - cv
+    transform = lda.transform(x[i].reshape(1,-1))
+    print('正答:%s 判別結果:%i LDA:%f (%f)' % (y[i], (not result<0)+1, result, transform))
+```
+
+```
+正答:1 判別結果:1 LDA:-1.858186 (-1.858186)
+正答:1 判別結果:1 LDA:-1.505897 (-1.505897)
+（中略）
+正答:1 判別結果:2 LDA:0.258782 (0.258782)
+（中略）
+正答:2 判別結果:2 LDA:3.386449 (3.386449)
+正答:2 判別結果:2 LDA:1.368286 (1.368286)
+（後略）
+```
