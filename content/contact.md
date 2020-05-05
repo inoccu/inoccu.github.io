@@ -2,10 +2,12 @@
 title: お問い合わせ
 ---
 
-私（井上研一）へのお問い合わせは、下記のいずれかにお願いします。
+私（井上研一）へのお問い合わせは、下記のいずれかにお願いします。  
+開発・コンサルティングのお仕事については、株式会社ビビンコでお受けしています。  
+執筆・講演のお仕事については、原則として個人でお受けしています。
 
-- メール: [inoccu@gmail.com](mailto:inoccu@gmail.com)
-- お問い合わせフォーム: [株式会社ビビンコ](https://vivinko.com/contact)
+- メール: [inoue.kenichi@inoccu.com](mailto:inoue.kenichi@inoccu.com)
+- Webフォーム: [株式会社ビビンコ](https://vivinko.com/contact)
 
 または、下記SNSでメッセージをいただいても構いません。
 
