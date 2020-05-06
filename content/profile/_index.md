@@ -8,7 +8,7 @@ noshowpages: true
 ## 井上 研一　(Inoue, Ken'ichi)
 
 ITエンジニア／経済産業省推進資格ITコーディネータ。  
-[株式会社ビビンコ](https://vivinko.com)代表取締役、[Tech Garden School](https://techgardenschool.com)講師。[SEプラス](https://www.seplus.jp/dokushuzemi/)講師。
+[株式会社ビビンコ](https://vivinko.com)代表取締役、[Tech Garden School](https://techgardenschool.com)講師、[SEプラス](https://www.seplus.jp/dokushuzemi/)講師。
 
 1979年、福岡県北九州市出身。神奈川県横浜市在住。  
 九州電子計算機専門学校小倉校（現・KCS北九州情報専門学校）卒業。  
