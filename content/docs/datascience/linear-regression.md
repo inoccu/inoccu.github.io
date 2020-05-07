@@ -142,7 +142,7 @@ $$
 ```python
 import numpy as np
 
-# 偏差を求めるため平均値（メジアン）を求めておく
+# 偏差を求めるため平均値を求めておく
 y_mean = np.mean(y)
 p_mean = np.mean(pred)
 
