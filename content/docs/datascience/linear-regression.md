@@ -263,7 +263,7 @@ import numpy as np
 # 予測値を得る
 pred = model.predict(boston.data)
 
-# 偏差を求めるため平均値（メジアン）を求めておく
+# 偏差を求めるため平均値を求めておく
 y_mean = np.mean(boston.target)
 p_mean = np.mean(pred)
 
