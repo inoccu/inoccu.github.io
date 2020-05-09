@@ -18,6 +18,7 @@ url: profile/writing.html
 
 井上研一 著　リックテレコム　2020年5月刊行  
 本書は、AWSが提供するAIのサービスについて、その全体像をまるごとざっくりつかんで頂くことを目的としています。Pythonを使って、まずは画像認識の「Rekognition」や音声認識の「Transcribe」など、比較的身近なサービスを見ていきます。次に、トレーニングデータを準備して予測モデルを作成する「Forecast」や「Personalize」を操作してみます。AWS AIの世界はさらに広がります。本書の後半では、より一層高度なサービス、すなわち完全マネージド型の機械学習サービス「SageMaker」、深層学習フレームワーク「Deep LearningAMI」にチャレンジします。それでは、早速はじめましょう!  
+[出版社によるサポートサイト](http://www.ric.co.jp/book/contents/book_1246.html)  
 [コードリスト](/docs/awsai/)
 
 ### 現場で使える！Watson開発入門
