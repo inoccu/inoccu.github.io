@@ -3,7 +3,9 @@ title: 「使ってわかったAWSのAI」コードリスト
 date: 2020-05-26
 ---
 
-書籍[「使ってわかったAWSのAI」](https://www.amazon.co.jp/dp/4865942467/)（井上研一＝著、リックテレコム＝刊）のコードリストです。
+書籍「使ってわかったAWSのAI」（井上研一＝著、リックテレコム＝刊）のコードリストです。  
+[出版社によるサポートサイト](http://www.ric.co.jp/book/contents/book_1246.html)  
+[Amazon.co.jpで購入](https://amzn.to/2WhXCcw)
 
 ## 第3章 AIサービス
 
