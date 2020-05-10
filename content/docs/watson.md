@@ -7,6 +7,8 @@ date: 2020-05-10
 [出版社によるサポートサイト](http://www.ric.co.jp/book/contents/book_1128.html)  
 [Amazon.co.jpで購入](https://amzn.to/2ziUROV)
 
+2020年5月版です。
+
 ## Python SDKのインストール
 
 ```python
