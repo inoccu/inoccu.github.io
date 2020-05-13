@@ -10,10 +10,6 @@ hasCJKLanguage = true
 
 theme = "coder-slasher"
 
-pygmentsstyle = "b2"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-
 disqusshortname = "inoccu"
 googleAnalytics = "UA-2794204-22"
 
@@ -25,3 +21,13 @@ googleAnalytics = "UA-2794204-22"
     [markup.goldmark]
         [markup.goldmark.renderer]
             unsafe = true
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        hl_lines = ""
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = true
+        style = "monokai"
+        tabWidth = 4

@@ -124,8 +124,8 @@ discovery.list_configurations('{environment_id}').get_result()
 
 ```python
 collection = discovery.create_collection(
-    environment_id='15db2ef0-4e69-4b8f-ac14-c0c2152edbb1',
-    configuration_id='17ed630a-b7c0-47f2-990c-aa105958ee1c',
+    environment_id='{environment_id}',
+    configuration_id='{configuration_id}',
     name='My Collection',
     language='ja'
 ).get_result()
