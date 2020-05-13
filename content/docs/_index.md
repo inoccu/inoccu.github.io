@@ -1,0 +1,20 @@
+---
+title: 資料
+noshowpages: true
+---
+
+## 書籍サポート
+
+執筆した書籍に関するサポート資料です。
+
+- [「初めてのWatson 改訂版」コードリスト（Python SDK版）](watson/)
+- [「使ってわかったAWSのAI」コードリスト](awsai/)
+
+## データサイエンス
+
+主にPythonとscikit-learnを使用したデータサイエンスの基礎資料です。
+
+- [回帰分析の基礎](datascience/linear-regression.html)
+- [主成分分析の基礎](datascience/pca.html)
+- [判別分析の基礎](datascience/discriminant.html)
+

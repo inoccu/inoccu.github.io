@@ -1,7 +1,7 @@
 ---
 title: 主成分分析の基礎
-url: /docs/datascience/pca.html
 date: 2020-05-02
+url: /docs/datascience/pca.html
 math: true
 ---
 
