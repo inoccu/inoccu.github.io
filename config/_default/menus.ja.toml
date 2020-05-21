@@ -13,14 +13,19 @@ name = "登壇"
 weight = 3
 url = "/profile/speaking.html"
 
+#[[main]]
+#name = "投稿"
+#weight = 4
+#url = "/posts/"
+
 [[main]]
 name = "資料"
-weight = 4
+weight = 5
 url = "/docs/"
 
 [[main]]
 name = "検索"
-weight = 5
+weight = 6
 url = "/search/"
 
 [[main]]
