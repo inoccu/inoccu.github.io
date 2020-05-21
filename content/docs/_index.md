@@ -21,3 +21,7 @@ noshowpages: true
 ## その他
 
 - [MQTTの基本動作](mqtt/)
+
+## スライド
+
+- 2020-05-22 [with/afterコロナの世界とAI](/slides/20200522-awsai)
