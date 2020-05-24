@@ -12,4 +12,6 @@ title: お問い合わせ
 または、下記SNSでメッセージをいただいても構いません。
 
 - Twitter: [@inoccu](https://twitter.com/inoccu/)
+- Facebook: www.facebook.com/kenichi.inoue
+- LinkedIn: www.linkedin.com/in/inouekenichi
 
