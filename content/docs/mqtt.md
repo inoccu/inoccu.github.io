@@ -144,7 +144,7 @@ import paho.mqtt.client as mqtt
 client04 = mqtt.Client(client_id='client04')
 
 client04.connect('localhost', 1883)
-info = client04.publish(topic='test', payload='retain', retain=True)
+info = client04.publish(topic='test', payload='retain message', retain=True)
 print('rc:', info.rc)
 print('mid:', info.mid)
 client04.disconnect()
@@ -173,7 +173,7 @@ PublisherがあらかじめWillメッセージと、送信先のトピックを�
 import paho.mqtt.client as mqtt
 
 client04 = mqtt.Client(client_id='client04')
-client04.will_set(topic='test', payload='will')
+client04.will_set(topic='test', payload='will message')
 
 client04.connect('localhost', 1883)
 info = client04.publish(topic='test', payload='abc')
@@ -206,7 +206,7 @@ import paho.mqtt.client as mqtt
 from time import sleep
 
 client04 = mqtt.Client(client_id='client04')
-client04.will_set(topic='test', payload='will')
+client04.will_set(topic='test', payload='will message')
 
 client04.connect('localhost', 1883, keepalive=300)
 
@@ -232,5 +232,54 @@ info = client04.publish(topic='test', payload='abc')
 print('rc:', info.rc)
 print('mid:', info.mid)
 client04.loop_forever()
+```
+
+## SSLとログイン
+
+SSL証明書をLet's Encryptで取得した場合、`/etc/mosquitto/mosquitto.conf`は下記のように設定する。
+
+```
+listener 8883
+cafile /etc/letsencrypt/live/{domain}/cert.pem
+certfile /etc/letsencrypt/live/{domain}/fullchain.pem
+keyfile /etc/letsencrypt/live/{domain}/privkey.pem
+tls_version tlsv1.2
+```
+
+MQTT接続時にログインをさせたい場合は、`mosquitto_passwd`コマンドでパスワードファイル（ここでは`/etc/mosquitto/pwfile`）を作成し、下記の設定を追加する。
+
+```
+allow_anonymous false
+password_file /etc/mosquitto/pwfile
+```
+
+mosquittoクライアントを使用したSubscriberの接続。Publisherも概ね同様のコマンドになる。`cafile`はLet's Encryptの場合は`DST_ROOT_CA_X3.pem`を使用できる。但し、このファイルの場所はOSにより異なる。
+
+```bash
+mosquitto_sub -h {host} -p 8883 -u mqtt -P test -t test --cafile /etc/ssl/certs/DST_Root_CA_X3.pem
+```
+
+Pythonでは下記のようなコードになる。
+
+```python
+import paho.mqtt.client as mqtt
+
+def on_connect(client, userdata, flags, rc):
+    print("Connected with result code "+str(rc))
+
+def on_message(client, userdata, message):
+    print('topic:', message.topic)
+    print('payload:', message.payload)
+    print('qos:', message.qos)
+
+client03 = mqtt.Client(client_id='client03', clean_session=False)
+client03.tls_set(ca_certs='/etc/ssl/certs/DST_Root_CA_X3.pem')
+client03.username_pw_set('mqtt', 'test')
+client03.on_connect = on_connect
+client03.on_message = on_message
+
+client03.connect('{host}', 8883)
+client03.subscribe(topic='test', qos=1)
+client03.loop_forever()
 ```
 
