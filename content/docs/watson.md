@@ -100,7 +100,7 @@ discovery = DiscoveryV1(
 )
 
 # ダラス以外のリージョンを指定する場合(例は東京リージョン)
-# nlu.set_service_url('https://api.jp-tok.discovery.watson.cloud.ibm.com')
+# discovery.set_service_url('https://api.jp-tok.discovery.watson.cloud.ibm.com')
 
 environment = discovery.create_environment(name='My Environment', size='LT').get_result()
 print(json.dumps(environment, indent=2, ensure_ascii=False))
@@ -205,7 +205,7 @@ stt = SpeechToTextV1(
 )
 
 # ダラス以外のリージョンを指定する場合(例は東京リージョン)
-# nlu.set_service_url('https://api.jp-tok.speech-to-text.watson.cloud.ibm.com')
+# stt.set_service_url('https://api.jp-tok.speech-to-text.watson.cloud.ibm.com')
 
 with open('recoding.flac', 'rb') as f:
     response = stt.recognize(
@@ -229,7 +229,7 @@ tts = TextToSpeechV1(
 )
 
 # ダラス以外のリージョンを指定する場合(例は東京リージョン)
-# nlu.set_service_url('https://api.jp-tok.text-to-speech.watson.cloud.ibm.com')
+# tts.set_service_url('https://api.jp-tok.text-to-speech.watson.cloud.ibm.com')
 
 with open('speech.flac', 'wb') as f:
     f.write(
