@@ -17,6 +17,7 @@ noshowpages: true
 - [回帰分析の基礎](datascience/linear-regression.html)
 - [主成分分析の基礎](datascience/pca.html)
 - [判別分析の基礎](datascience/discriminant.html)
+- [クラスター分析の基礎](datascience/cluster.html)
 
 ## その他
 
