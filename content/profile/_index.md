@@ -10,7 +10,7 @@ noshowpages: true
 ITエンジニア／経済産業省推進資格ITコーディネータ。  
 [株式会社ビビンコ](https://vivinko.com)代表取締役、[Tech Garden School](https://techgardenschool.com)講師、[SEプラス](https://www.seplus.jp/dokushuzemi/)講師。
 
-1979年、福岡県北九州市出身。神奈川県横浜市在住。  
+1979年、福岡県北九州市出身。神奈川県横浜市在住。（2020年内に北九州市にUターン予定）  
 九州電子計算機専門学校小倉校（現・KCS北九州情報専門学校）卒業。  
 産業能率大学 情報マネジメント学部卒業。  
 放送大学 大学院文化科学研究科に修士選科生として在籍中。
