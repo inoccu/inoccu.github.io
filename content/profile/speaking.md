@@ -15,6 +15,7 @@ AI・IoTに強いITコーディネータとして、日本全国で登壇させ�
 - ITコーディネータ協会主催研修[「ITCのための実践AI〜AIクラウド体験研修〜」](https://www.itc.or.jp/foritc/seminar/ai_cloud.html)
 - ITコーディネータ協会主催研修[「ITCのための実践AI～AIプロジェクト実践研修～」](https://www.itc.or.jp/foritc/seminar/ai_jissen.html)
 - ITコーディネータ協会主催研修[「ITコンサルタントのためのデータ分析体験研修」](https://www.itc.or.jp/foritc/seminar/ai_data.html)
+- SEプラス主催セミナー（SEカレッジ）「DX（Digital Transformation）とは」
 - SEプラス主催研修（SEカレッジ）「Watsonで体感するAIプロジェクト入門」
 - SEプラス主催研修（SEカレッジ）「Pythonで活用するIBM Watson」
 - 山形県ICT実践人材育成協議会「AIクラウドサービス実践活用研修」

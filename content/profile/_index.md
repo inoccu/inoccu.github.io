@@ -35,6 +35,8 @@ ITエンジニア／経済産業省推進資格ITコーディネータ。
 
 ### 記事掲載
 
+- [ふくおか経済 2020年9月号](https://www.fukuoka-keizai.co.jp/backnumber/%e3%81%b5%e3%81%8f%e3%81%8a%e3%81%8b%e7%b5%8c%e6%b8%88-vol-385-2/) Fukuokan's Voice  
+  ※インタビュー記事（2020年9月）
 - [HINTs 生産性PULS北九州 MEET UP INNOVATORS](http://ssl.city.kitakyushu.lg.jp/page/seisansei-up/innovators/05.html)  
   ※インタビュー記事（2020年2月）
 - [日刊工業新聞「陳列トレーが在庫数カウント ビビンコなど」](https://www.nikkan.co.jp/articles/view/00540284)  
