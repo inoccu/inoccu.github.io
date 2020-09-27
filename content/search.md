@@ -8,14 +8,11 @@ title: 検索
 
 - Twitter https://twitter.com/inoccu
 - Facebook https://www.facebook.com/kenichi.inoue
-- note https://note.com/inoccu
-- ブログ https://inoccu.net/blog　※2020年3月以降はnoteに移行しています。
-- qiita https://quiita.com/inoccu　※ほとんど書いていません…。
+- qiita https://quiita.com/inoccu
 - SlideShare https://www.slideshare.net/inoccu
 
-## Googleカスタム検索
+## Google カスタム検索
 
-井上研一が書いた文章などをGoogleで検索できます。
+井上研一が書いた文章などを Google で検索できます。
 
 {{< gcse >}}
-

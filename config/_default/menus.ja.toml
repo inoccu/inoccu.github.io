@@ -13,10 +13,10 @@ name = "登壇"
 weight = 3
 url = "/profile/speaking.html"
 
-[[main]]
-name = "投稿"
-weight = 4
-url = "/posts/"
+#[[main]]
+#name = "投稿"
+#weight = 4
+#url = "/posts/"
 
 [[main]]
 name = "資料"

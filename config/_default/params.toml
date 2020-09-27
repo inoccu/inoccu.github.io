@@ -37,17 +37,27 @@ custom_js = []
     weight = 2
     url = "https://www.facebook.com/kenichi.inoue"
 [[social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 3
+    url = "https://www.linkedin.com/in/inouekenichi"
+[[social]]
+    name = "YouTube"
+    icon = "fab fa-youtube"
+    weight = 4
+    url = "https://www.youtube.com/channel/UCImV4wtrKCgZNRlACXG18EA"
+[[social]]
     name = "Github"
     icon = "fab fa-github"
-    weight = 3
-    url = "https://github.com/inoccu"
-[[social]]
-    name = "Note"
-    icon = "far fa-sticky-note"
-    weight = 4
-    url = "https://note.com/inoccu"
-[[social]]
-    name = "WordPress"
-    icon = "fab fa-wordpress"
     weight = 5
-    url = "https://inoccu.net/blog/"
+    url = "https://github.com/inoccu"
+#[[social]]
+#    name = "Note"
+#    icon = "far fa-sticky-note"
+#    weight = 4
+#    url = "https://note.com/inoccu"
+#[[social]]
+#    name = "WordPress"
+#    icon = "fab fa-wordpress"
+#    weight = 5
+#    url = "https://inoccu.net/blog/"
