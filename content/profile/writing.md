@@ -59,7 +59,8 @@ AIサービスの先駆けでもある「Watson（ワトソン）」。近年急
 [出版社によるサポートサイト](http://www.ric.co.jp/book/contents/book_1052.html)  
 [Amazon.co.jpで購入](https://amzn.to/35Jrv8x)
 
-※本書は2017年10月に、[Onlybook社より韓国語版](https://www.onlybook.co.kr/entry/watson-ai)が刊行されています。
+※本書は2017年10月に、[Onlybook社より韓国語版](https://www.onlybook.co.kr/entry/watson-ai)が刊行されています。  
+![初めてのWatson 韓国語版](assets/watson_kr.png)
 
 ## 雑誌
 
