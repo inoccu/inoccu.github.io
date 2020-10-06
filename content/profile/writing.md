@@ -83,5 +83,6 @@ AIサービスの先駆けでもある「Watson（ワトソン）」。近年急
 ## オンラインメディア
 
 - 東洋経済オンライン [｢何となくAI ｣､実はアルゴリズム活用だった](https://toyokeizai.net/articles/-/286772)（2019年6月）
+- Biz/Zine [顧客サービスのためのWatson活用法：コグニティブ＋ボットでここまで変わる](https://bizzine.jp/article/detail/2055)（2017年2月）
 - GMOグループ Z.com ZLOG [井上研一先生コラム](https://hosting.z.com/jp/category/z-log/column/)（2017年1月～10月）
 - @IT [OSS「JobScheduler」で実現するこれからの運用自動化](https://www.atmarkit.co.jp/ait/articles/1401/20/news140.html)（2014年1月）
