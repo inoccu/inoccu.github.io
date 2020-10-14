@@ -8,9 +8,9 @@ title: 検索
 
 - Twitter https://twitter.com/inoccu
 - Facebook https://www.facebook.com/kenichi.inoue
-- qiita https://quiita.com/inoccu
+- qiita https://qiita.com/inoccu
 - SlideShare https://www.slideshare.net/inoccu
-- 株式会社ビビンコ社長ブログ [https://vivinko.com/blog](https://vivinko.com/blog)
+- 株式会社ビビンコ社長ブログ https://vivinko.com/blog
 
 ## Google カスタム検索
 
