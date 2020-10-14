@@ -10,6 +10,7 @@ title: 検索
 - Facebook https://www.facebook.com/kenichi.inoue
 - qiita https://quiita.com/inoccu
 - SlideShare https://www.slideshare.net/inoccu
+- 株式会社ビビンコ社長ブログ [https://vivinko.com/blog](https://vivinko.com/blog)
 
 ## Google カスタム検索
 
