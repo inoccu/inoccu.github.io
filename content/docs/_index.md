@@ -22,6 +22,7 @@ noshowpages: true
 ## その他
 
 - [MQTTの基本動作](mqtt/)
+- [Notebookの使い方](assets/notebook_howto.pdf)
 
 ## スライド
 
