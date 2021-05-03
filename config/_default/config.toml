@@ -1,4 +1,4 @@
-baseURL = "https://inoccu.com/"
+baseURL = "https://inoccu.github.io/"
 title = "INOUE, Ken'ichi"
 canonifyURLs = true
 paginate = 20
