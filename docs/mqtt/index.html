@@ -1,0 +1,138 @@
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="井上 研一"><meta name=twitter:card content="summary"><meta name=twitter:title content="MQTTの基本動作"><meta name=twitter:description content="MQTTの基本動作をEclipse Foundationによるオープンソースのリファレンス実装であるMosquittoと、Python用のMQ"><meta property="og:title" content="MQTTの基本動作"><meta property="og:description" content="MQTTの基本動作をEclipse Foundationによるオープンソースのリファレンス実装であるMosquittoと、Python用のMQ"><meta property="og:type" content="article"><meta property="og:url" content="https://inoccu.github.io/docs/mqtt/"><meta property="article:section" content="docs"><meta property="article:published_time" content="2020-05-13T00:00:00+00:00"><meta property="article:modified_time" content="2020-05-13T00:00:00+00:00"><meta property="og:site_name" content="井上 研一"><base href=https://inoccu.github.io/docs/mqtt/><title>MQTTの基本動作 - 井上 研一</title><link rel=canonical href=https://inoccu.github.io/docs/mqtt/><link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel=stylesheet><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css integrity=sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=https://inoccu.github.io/css/coder.min.76681fdb0711c555514e38148a33b692f685093870cba0a00547d255d7518258.css integrity="sha256-dmgf2wcRxVVRTjgUijO2kvaFCThwy6CgBUfSVddRglg=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://inoccu.github.io/css/custom.css><link rel=icon type=image/png href=https://inoccu.github.io/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://inoccu.github.io/images/favicon-16x16.png sizes=16x16><meta name=generator content="Hugo 0.81.0"></head><body class=colorscheme-light><div id=back_to_top><a href=#></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://inoccu.github.io/>Inoue, Ken'ichi</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fas fa-bars"></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/profile/>プロフィール</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/profile/writing.html>執筆</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/profile/speaking.html>登壇</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/docs/>資料</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/search/>検索</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/contact/>お問い合わせ</a></li></ul></section></nav><div class=content><section class="container page"><article><header><h1>MQTTの基本動作</h1></header><p>MQTTの基本動作をEclipse Foundationによるオープンソースのリファレンス実装であるMosquittoと、Python用のMQTTクライアントであるpaho-mqttを使って確認する。</p><ul><li><a href=https://mosquitto.org>Eclipse Mosquitto</a></li><li><a href=https://pypi.org/project/paho-mqtt/>Eclipse Paho MQTT Python client library</a></li></ul><h2 id=broker>Broker</h2><p>下記のようにBrokerを起動する。<code>-v</code>を指定すると詳細なログが表示される（verboseモード）。<br>デフォルトでは、1883番ポートを使用する。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mosquitto -v
+</code></pre></div><h2 id=publishとsubscribe>PublishとSubscribe</h2><pre><code class=language-mermaid data-lang=mermaid>sequenceDiagram
+
+Subscriber -&gt;&gt; Broker : subscribe topic 'test'
+Publisher -&gt;&gt; Broker : message 'abc' to topic 'test'
+Broker -&gt;&gt; Subscriber : message 'abc'
+</code></pre><p>Subscriberでtestトピックを購読（subscribe）する。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mosquitto_sub -t test
+</code></pre></div><p>Publisherでtestトピックにabcと発行（publish）する。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mosquitto_pub -t test -m abc
+</code></pre></div><p>Subscriberにabcと表示される。</p><h2 id=qos>QoS</h2><p>Subscriberは購読する際に、Publisherはメッセージを発行する際に、QoSを指定する。</p><ul><li>QoS 0（デフォルト）：メッセージを最高1回届ける（届かないこともある）</li><li>QoS 1：メッセージを最低1回届ける（2回届くこともある）</li><li>QoS 2：メッセージを必ず1回届ける</li></ul><p>SubscriberとPublisherで指定したQoSが異なる場合は、低い方に設定される。</p><h2 id=durable-subscribe>Durable Subscribe</h2><pre><code class=language-mermaid data-lang=mermaid>sequenceDiagram
+Subscriber -&gt;&gt; Broker : subscribe topic 'test'
+Note over Subscriber, Broker : ここで切断
+Publisher -&gt;&gt; Broker : message 'abc' to topic 'test'
+Subscriber -&gt;&gt; Broker : subscribe topic 'test'
+Broker -&gt;&gt; Subscriber : message 'abc'
+</code></pre><p>Subscriberが下記の条件で購読したとする。</p><ul><li>QoSを1または2</li><li>クライアントIDをセットする</li><li>Clean Sessionなし</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mosquitto_sub -t test -q <span style=color:#ae81ff>1</span> -i client01 -c
+</code></pre></div><p>その後、SubscriberがBrokerとの接続を切断する。</p><p>Publisherが、QoSを1または2としてメッセージを発行する。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mosquitto_pub -t test -m abc -i client02 -q <span style=color:#ae81ff>1</span>
+</code></pre></div><p>その時点ではメッセージはSubscriberに届かないが、Subscriberが再度同じ条件でBrokerに接続し、購読を始めた際に、Publisherが発行したメッセージが届く。<br>Subscriberの切断時にメッセージが複数発行されていれば、そのメッセージはすべて再接続時に届く。</p><h3 id=pythonでの実装>Pythonでの実装</h3><p>Subscriberの実装は下記のとおり。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> paho.mqtt.client <span style=color:#f92672>as</span> mqtt
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>on_message</span>(client, userdata, message):
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;topic:&#39;</span>, message<span style=color:#f92672>.</span>topic)
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;payload:&#39;</span>, message<span style=color:#f92672>.</span>payload)
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;qos:&#39;</span>, message<span style=color:#f92672>.</span>qos)
+
+client03 <span style=color:#f92672>=</span> mqtt<span style=color:#f92672>.</span>Client(client_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;client03&#39;</span>, clean_session<span style=color:#f92672>=</span>False)
+client03<span style=color:#f92672>.</span>on_message <span style=color:#f92672>=</span> on_message
+
+client03<span style=color:#f92672>.</span>connect(<span style=color:#e6db74>&#39;localhost&#39;</span>, <span style=color:#ae81ff>1883</span>)
+client03<span style=color:#f92672>.</span>subscribe(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, qos<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>)
+client03<span style=color:#f92672>.</span>loop_forever()
+</code></pre></div><p>Publisherの実装は下記のとおり。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> paho.mqtt.client <span style=color:#f92672>as</span> mqtt
+
+client04 <span style=color:#f92672>=</span> mqtt<span style=color:#f92672>.</span>Client(client_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;client04&#39;</span>)
+
+client04<span style=color:#f92672>.</span>connect(<span style=color:#e6db74>&#39;localhost&#39;</span>, <span style=color:#ae81ff>1883</span>)
+info <span style=color:#f92672>=</span> client04<span style=color:#f92672>.</span>publish(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;abc&#39;</span>, qos<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;rc:&#39;</span>, info<span style=color:#f92672>.</span>rc)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;mid:&#39;</span>, info<span style=color:#f92672>.</span>mid)
+client04<span style=color:#f92672>.</span>disconnect()
+</code></pre></div><h2 id=retain>Retain</h2><pre><code class=language-mermaid data-lang=mermaid>sequenceDiagram
+Publisher -&gt;&gt; Broker : retain 'retain_message' to topic 'test'
+Subscriber -&gt;&gt; Broker : subscribe topic 'test'
+Broker -&gt;&gt; Subscriber : message 'retain_message'
+</code></pre><p>PublisherはあらかじめRetainメッセージをBrokerに登録しておくことによって、新たに購読を始めたSubscriberに対してそのメッセージを届けることができる。</p><p>既に購読しているSubscriberに対しては、Retainメッセージを登録した時点でそのメッセージが届く。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mosquitto_pub -t test -m retain -r
+</code></pre></div><h3 id=pythonでの実装-1>Pythonでの実装</h3><p>Publisherを下記のように実装する。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> paho.mqtt.client <span style=color:#f92672>as</span> mqtt
+
+client04 <span style=color:#f92672>=</span> mqtt<span style=color:#f92672>.</span>Client(client_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;client04&#39;</span>)
+
+client04<span style=color:#f92672>.</span>connect(<span style=color:#e6db74>&#39;localhost&#39;</span>, <span style=color:#ae81ff>1883</span>)
+info <span style=color:#f92672>=</span> client04<span style=color:#f92672>.</span>publish(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;retain message&#39;</span>, retain<span style=color:#f92672>=</span>True)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;rc:&#39;</span>, info<span style=color:#f92672>.</span>rc)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;mid:&#39;</span>, info<span style=color:#f92672>.</span>mid)
+client04<span style=color:#f92672>.</span>disconnect()
+</code></pre></div><p>Subscriberでは特殊な実装は必要ない。クライアントIDやClean Sessionの設定も不要。<br>Subscriberが受信済みのRetainメッセージは、同一IDで接続している限り、さらに届くことはない（QoS次第かも？）。</p><h2 id=will>Will</h2><pre><code class=language-mermaid data-lang=mermaid>sequenceDiagram
+Subscriber -&gt;&gt; Broker : subscribe topic 'test'
+Publisher -&gt;&gt; Broker : set will message to topic 'test'
+Publisher -&gt;&gt; Broker : message 'abc' to topic 'test'
+Broker -&gt;&gt; Subscriber : message 'abc'
+Note over Publisher, Broker : ここで切断
+Broker -&gt;&gt; Subscriber : will message
+</code></pre><p>PublisherがあらかじめWillメッセージと、送信先のトピックを設定しておくと、PublisherとBrokerの接続が不意に切れた際に、トピックのSubscriberにWillメッセージが届く。</p><p>ここで「不意に切れた」とは、正常に<code>disconnect</code>が行われなかったという意味であり、下記のように<code>disconnect</code>が行われていればWillメッセージは送信されない。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> paho.mqtt.client <span style=color:#f92672>as</span> mqtt
+
+client04 <span style=color:#f92672>=</span> mqtt<span style=color:#f92672>.</span>Client(client_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;client04&#39;</span>)
+client04<span style=color:#f92672>.</span>will_set(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;will message&#39;</span>)
+
+client04<span style=color:#f92672>.</span>connect(<span style=color:#e6db74>&#39;localhost&#39;</span>, <span style=color:#ae81ff>1883</span>)
+info <span style=color:#f92672>=</span> client04<span style=color:#f92672>.</span>publish(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;abc&#39;</span>)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;rc:&#39;</span>, info<span style=color:#f92672>.</span>rc)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;mid:&#39;</span>, info<span style=color:#f92672>.</span>mid)
+client04<span style=color:#f92672>.</span>disconnect()
+</code></pre></div><p>一方、下記のように<code>disconnect</code>を行うことなくPublisherのプロセスを終了させた場合、<code>keepalive</code>のデフォルト値である60秒が経過した時点でWillメッセージが送信される。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> paho.mqtt.client <span style=color:#f92672>as</span> mqtt
+
+client04 <span style=color:#f92672>=</span> mqtt<span style=color:#f92672>.</span>Client(client_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;client04&#39;</span>)
+client04<span style=color:#f92672>.</span>will_set(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;will&#39;</span>)
+
+client04<span style=color:#f92672>.</span>connect(<span style=color:#e6db74>&#39;localhost&#39;</span>, <span style=color:#ae81ff>1883</span>)
+info <span style=color:#f92672>=</span> client04<span style=color:#f92672>.</span>publish(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;abc&#39;</span>)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;rc:&#39;</span>, info<span style=color:#f92672>.</span>rc)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;mid:&#39;</span>, info<span style=color:#f92672>.</span>mid)
+<span style=color:#75715e># diconnectしない</span>
+<span style=color:#75715e>#client04.disconnect()</span>
+</code></pre></div><p>さらに、下記の例のように定期的にメッセージを発行しており（ここでは60秒）、Brokerへの接続時に<code>keepalive</code>を5分と設定していたとする。<br>その場合でも、Publisherのプロセスを強制終了するなどして、Brokerが不意の切断を認識することができれば、<code>keepalive</code>の時間を待つことなくWillメッセージをSubscriberに送信する。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> paho.mqtt.client <span style=color:#f92672>as</span> mqtt
+<span style=color:#f92672>from</span> time <span style=color:#f92672>import</span> sleep
+
+client04 <span style=color:#f92672>=</span> mqtt<span style=color:#f92672>.</span>Client(client_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;client04&#39;</span>)
+client04<span style=color:#f92672>.</span>will_set(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;will message&#39;</span>)
+
+client04<span style=color:#f92672>.</span>connect(<span style=color:#e6db74>&#39;localhost&#39;</span>, <span style=color:#ae81ff>1883</span>, keepalive<span style=color:#f92672>=</span><span style=color:#ae81ff>300</span>)
+
+i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+<span style=color:#66d9ef>while</span> True:
+    info <span style=color:#f92672>=</span> client04<span style=color:#f92672>.</span>publish(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;message </span><span style=color:#e6db74>%i</span><span style=color:#e6db74>&#39;</span> <span style=color:#f92672>%</span> i)
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;rc:&#39;</span>, info<span style=color:#f92672>.</span>rc)
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;mid:&#39;</span>, info<span style=color:#f92672>.</span>mid)
+    i<span style=color:#f92672>+=</span><span style=color:#ae81ff>1</span>
+    sleep(<span style=color:#ae81ff>60</span>)
+</code></pre></div><p>ところで、Publisherでメッセージを発行していなくても、<code>loop_forever</code>を実行していれば<code>keepalive</code>の間隔で行われたBrokerからPublisherに対する<code>PINGREQ</code>に、<code>PINGRESP</code>を返すことができる。接続は継続しているものとしてWillメッセージは送信されない。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> paho.mqtt.client <span style=color:#f92672>as</span> mqtt
+
+client04 <span style=color:#f92672>=</span> mqtt<span style=color:#f92672>.</span>Client(client_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;client04&#39;</span>)
+client04<span style=color:#f92672>.</span>will_set(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;will&#39;</span>)
+
+client04<span style=color:#f92672>.</span>connect(<span style=color:#e6db74>&#39;localhost&#39;</span>, <span style=color:#ae81ff>1883</span>)
+info <span style=color:#f92672>=</span> client04<span style=color:#f92672>.</span>publish(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, payload<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;abc&#39;</span>)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;rc:&#39;</span>, info<span style=color:#f92672>.</span>rc)
+<span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;mid:&#39;</span>, info<span style=color:#f92672>.</span>mid)
+client04<span style=color:#f92672>.</span>loop_forever()
+</code></pre></div><h2 id=sslとログイン>SSLとログイン</h2><p>SSL証明書をLet&rsquo;s Encryptで取得した場合、<code>/etc/mosquitto/mosquitto.conf</code>は下記のように設定する。</p><pre><code>listener 8883
+cafile /etc/letsencrypt/live/{domain}/cert.pem
+certfile /etc/letsencrypt/live/{domain}/fullchain.pem
+keyfile /etc/letsencrypt/live/{domain}/privkey.pem
+tls_version tlsv1.2
+</code></pre><p>MQTT接続時にログインをさせたい場合は、<code>mosquitto_passwd</code>コマンドでパスワードファイル（ここでは<code>/etc/mosquitto/pwfile</code>）を作成し、下記の設定を追加する。</p><pre><code>allow_anonymous false
+password_file /etc/mosquitto/pwfile
+</code></pre><p>mosquittoクライアントを使用したSubscriberの接続。Publisherも概ね同様のコマンドになる。<code>cafile</code>はLet&rsquo;s Encryptの場合は<code>DST_ROOT_CA_X3.pem</code>を使用できる。但し、このファイルの場所はOSにより異なる。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mosquitto_sub -h <span style=color:#f92672>{</span>host<span style=color:#f92672>}</span> -p <span style=color:#ae81ff>8883</span> -u mqtt -P test -t test --cafile /etc/ssl/certs/DST_Root_CA_X3.pem
+</code></pre></div><p>Pythonでは下記のようなコードになる。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> paho.mqtt.client <span style=color:#f92672>as</span> mqtt
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>on_connect</span>(client, userdata, flags, rc):
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;Connected with result code &#34;</span><span style=color:#f92672>+</span>str(rc))
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>on_message</span>(client, userdata, message):
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;topic:&#39;</span>, message<span style=color:#f92672>.</span>topic)
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;payload:&#39;</span>, message<span style=color:#f92672>.</span>payload)
+    <span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#39;qos:&#39;</span>, message<span style=color:#f92672>.</span>qos)
+
+client03 <span style=color:#f92672>=</span> mqtt<span style=color:#f92672>.</span>Client(client_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;client03&#39;</span>, clean_session<span style=color:#f92672>=</span>False)
+client03<span style=color:#f92672>.</span>tls_set(ca_certs<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;/etc/ssl/certs/DST_Root_CA_X3.pem&#39;</span>)
+client03<span style=color:#f92672>.</span>username_pw_set(<span style=color:#e6db74>&#39;mqtt&#39;</span>, <span style=color:#e6db74>&#39;test&#39;</span>)
+client03<span style=color:#f92672>.</span>on_connect <span style=color:#f92672>=</span> on_connect
+client03<span style=color:#f92672>.</span>on_message <span style=color:#f92672>=</span> on_message
+
+client03<span style=color:#f92672>.</span>connect(<span style=color:#e6db74>&#39;{host}&#39;</span>, <span style=color:#ae81ff>8883</span>)
+client03<span style=color:#f92672>.</span>subscribe(topic<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;test&#39;</span>, qos<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>)
+client03<span style=color:#f92672>.</span>loop_forever()
+</code></pre></div></article></section></div><footer class=footer><section class=container>©
+2020 -
+2021
+Inoue, Ken'ichi</section></footer><script src=https://inoccu.github.io/js/mermaid.js></script><script>mermaid.init(void 0,".language-mermaid")</script><script src=https://code.jquery.com/jquery-3.5.0.min.js integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/typed.js@2.0.11></script><script src=https://inoccu.github.io/js/main.js></script></main><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-2794204-22','auto'),ga('send','pageview'))</script></body></html>

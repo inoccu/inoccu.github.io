@@ -1,0 +1,189 @@
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="井上 研一"><meta name=twitter:card content="summary"><meta name=twitter:title content="with/afterコロナの世界とAI"><meta name=twitter:description content="with/afterコロナの世界に求められるITシステムとはどのようなものでしょうか。リックテレコムより「使ってわかったAWSのAI」を5月26日に出版するITコーディネータが、AI利活用の視点で考えます。少し技術的な内容になりますが、クラウドの代名詞ともいえるAWSで、どんなAIサービスが提供されているのかを知りたい方にもオススメの内容です！"><meta property="og:title" content="with/afterコロナの世界とAI"><meta property="og:description" content="with/afterコロナの世界に求められるITシステムとはどのようなものでしょうか。リックテレコムより「使ってわかったAWSのAI」を5月26日に出版するITコーディネータが、AI利活用の視点で考えます。少し技術的な内容になりますが、クラウドの代名詞ともいえるAWSで、どんなAIサービスが提供されているのかを知りたい方にもオススメの内容です！"><meta property="og:type" content="article"><meta property="og:url" content="https://inoccu.github.io/slides/20200522-awsai/"><meta property="article:section" content="slides"><meta property="article:published_time" content="2020-05-22T00:00:00+00:00"><meta property="article:modified_time" content="2020-05-22T00:00:00+00:00"><meta property="og:site_name" content="井上 研一"><base href=https://inoccu.github.io/slides/20200522-awsai/><title>with/afterコロナの世界とAI - 井上 研一</title><link rel=canonical href=https://inoccu.github.io/slides/20200522-awsai/><link rel=stylesheet href=https://inoccu.github.io/reveal.js/dist/reset.css><link rel=stylesheet href=https://inoccu.github.io/reveal.js/dist/reveal.css><link rel=stylesheet href=https://inoccu.github.io/reveal.js/dist/theme/simple.css id=theme><link rel=stylesheet href=https://inoccu.github.io/reveal.js/plugin/highlight/monokai.css id=highlight-theme><link rel=icon type=image/png href=https://inoccu.github.io/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://inoccu.github.io/images/favicon-16x16.png sizes=16x16><meta name=generator content="Hugo 0.81.0"><style>.reveal td{vertical-align:top}.reveal h2{font-size:1.8em;border-bottom:solid 1px}</style></head><body><div class=reveal><div class=slides><section data-markdown data-separator="<hr>" data-separator-vertical="^\n>>>$"><textarea date-template>
+                    &lt;h2 id=&#34;withafterコロナのbr世界とai&#34;&gt;with/afterコロナの&lt;br&gt;世界とAI&lt;/h2&gt;
+&lt;p&gt;2020年5月22日&lt;/p&gt;
+&lt;p&gt;井上 研一&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;井上-研一&#34;&gt;井上 研一&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ITエンジニア／ITコーディネータ&lt;/li&gt;
+&lt;li&gt;株式会社ビビンコ 代表取締役
+&lt;ul&gt;
+&lt;li&gt;ビジネスコンテスト「北九州でIoT」で入選、株式会社ビビンコ創業&lt;/li&gt;
+&lt;li&gt;口腔画像認識モデルとアプリの開発&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;放送大学 大学院文化科学研究科&lt;/li&gt;
+&lt;li&gt;近著に「使ってわかった AWSのAI」「現場で使えるWatson開発入門（共著）」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;新著紹介&#34;&gt;新著紹介&lt;/h2&gt;
+&lt;table&gt;
+&lt;tr valign=&#39;top&#39;&gt;
+&lt;td&gt;
+&lt;img src=&#39;https://inoccu.com/profile/assets/9784865942460_s.png&#39;&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;b&gt;「使ってわかったAWSのAI」&lt;/b&gt;&lt;br&gt;
+井上研一・著&lt;br&gt;
+リックテレコム・刊&lt;br&gt;
+2020年5月26日発売
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;新しい生活様式&#34;&gt;新しい生活様式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;「新しい生活様式」&lt;/strong&gt;（働き方の部分）
+&lt;ul&gt;
+&lt;li&gt;テレワーク、ローテーション勤務、時差通勤&lt;/li&gt;
+&lt;li&gt;会議、名刺交換はオンラインで&lt;/li&gt;
+&lt;li&gt;対面での打ち合わせは換気をマスク&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;「働き方改革」&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;働く人のニーズの多様化に応える&lt;/li&gt;
+&lt;li&gt;就業機会の拡大&lt;/li&gt;
+&lt;li&gt;意欲・能力を存分に発揮できる環境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;dxとaiiot&#34;&gt;DXとAI/IoT&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;DX（総務省の定義）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ICTの浸透が人々の生活をあらゆる面でより良い方向に変化させること&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;with/afterコロナにおけるDX&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;いつでもどこでも労働生産性を損なわずに働ける&lt;/li&gt;
+&lt;li&gt;人の「力技」に頼る時代からの卒業
+&lt;ul&gt;
+&lt;li&gt;AI/IoTによってITはよりリアルな場所へ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;いま起きていること&#34;&gt;いま起きていること&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;テレワーク&lt;/li&gt;
+&lt;li&gt;ソーシャルディスタンス
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://robotstart.info/2020/05/12/mamorio-covid-1.html&#34;&gt;MAMORIO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ビッグデータ
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://corporate-web.agoop.net/pdf/covid-19/agoop_analysis_coronavirus.pdf&#34;&gt;人流データの解析&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;awsのaiでできること&#34;&gt;AWSのAIでできること&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;すぐに使えるAI
+&lt;ul&gt;
+&lt;li&gt;Rekognition（画像認識）&lt;/li&gt;
+&lt;li&gt;Comprehend（テキスト分析）&lt;/li&gt;
+&lt;li&gt;Transcribe（音声認識）、Polly（音声合成）&lt;/li&gt;
+&lt;li&gt;Forecast（予測）、Personalize（推薦）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;自由＆パワフルに作るAI
+&lt;ul&gt;
+&lt;li&gt;SageMaker&lt;/li&gt;
+&lt;li&gt;EC2 DLAMI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;分類と予測&#34;&gt;分類と予測&lt;/h2&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;分類&lt;/th&gt;
+&lt;th&gt;予測&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;ul&gt;
+&lt;li&gt;Rekognition&lt;/li&gt;
+&lt;li&gt;Comprehend&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→現状の認識&lt;/p&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;ul&gt;
+&lt;li&gt;Forecast&lt;/li&gt;
+&lt;li&gt;Personalize&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;→未来の予測&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;学習と推論&#34;&gt;学習と推論&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph LR
+subgraph 推論フェーズ
+未知のデータ --&gt; 学習済モデル
+学習済モデル --&gt; 推論結果
+end
+subgraph 学習フェーズ
+学習データ --&gt; 学習器
+学習器 --&gt; 学習済モデル
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;rekognition&#34;&gt;Rekognition&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;画像や動画の認識
+&lt;ul&gt;
+&lt;li&gt;モノやシーン&lt;/li&gt;
+&lt;li&gt;顔、人物の追跡&lt;/li&gt;
+&lt;li&gt;テキスト&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;一部、カスタムモデル可能&lt;/li&gt;
+&lt;li&gt;人間の眼の代わりになるが、システムにどう組み込むか？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;forecast&#34;&gt;Forecast&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;過去のデータから未来を予測（時系列）
+&lt;ul&gt;
+&lt;li&gt;小売の需要予測&lt;/li&gt;
+&lt;li&gt;サプライチェーンの在庫予測&lt;/li&gt;
+&lt;li&gt;収益・キャッシュフローの予測&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Web画面上でモデル作成・予測が可能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;withafterコロナの世界とai&#34;&gt;with/afterコロナの世界とAI&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;人の眼で見ないと･･･という作業の代替&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rekognition、Comprehend&lt;/li&gt;
+&lt;li&gt;まずはIoTでデータ化、画像等はAIでデータ化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;適切な資源配分（必要充分に最適化）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Forecast、Personalize&lt;/li&gt;
+&lt;li&gt;必要なデータをきちんと取得することが前提&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;参考文献&#34;&gt;参考文献&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://comemo.nikkei.com/n/nf55827b64eca&#34;&gt;碇　邦生（大分大学）【テレワークは前哨戦】アナログとデジタルで二分される世界&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+                </textarea></section></div></div><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-2794204-22','auto'),ga('send','pageview'))</script><script src=https://inoccu.github.io/reveal.js/dist/reveal.js></script><script src=https://inoccu.github.io/reveal.js/plugin/zoom/zoom.js></script><script src=https://inoccu.github.io/reveal.js/plugin/notes/notes.js></script><script src=https://inoccu.github.io/reveal.js/plugin/search/search.js></script><script src=https://inoccu.github.io/reveal.js/plugin/markdown/markdown.js></script><script src=https://inoccu.github.io/reveal.js/plugin/highlight/highlight.js></script><script>Reveal.initialize({controls:!0,progress:!0,center:!0,hash:!0,plugins:[RevealZoom,RevealNotes,RevealSearch,RevealMarkdown,RevealHighlight]})</script><script src=https://inoccu.github.io/js/mermaid.js></script><script>Reveal.on('ready',a=>{mermaid.init(void 0,".language-mermaid")}),Reveal.on('slidetransitionend',a=>{setTimeout(function(){mermaid.init(void 0,".language-mermaid")},1e3)})</script></body></html>

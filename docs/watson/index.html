@@ -1,0 +1,174 @@
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="井上 研一"><meta name=twitter:card content="summary"><meta name=twitter:title content="「初めてのWatson 改訂版」コードリスト（Python SDK版）"><meta name=twitter:description content="書籍「初めてのWatson 改訂版～APIの用例と実践プログラミング」（井上研一＝著、リックテレコム＝刊）のコードリストをPython SDKを"><meta property="og:title" content="「初めてのWatson 改訂版」コードリスト（Python SDK版）"><meta property="og:description" content="書籍「初めてのWatson 改訂版～APIの用例と実践プログラミング」（井上研一＝著、リックテレコム＝刊）のコードリストをPython SDKを"><meta property="og:type" content="article"><meta property="og:url" content="https://inoccu.github.io/docs/watson/"><meta property="article:section" content="docs"><meta property="article:published_time" content="2020-05-10T00:00:00+00:00"><meta property="article:modified_time" content="2020-05-10T00:00:00+00:00"><meta property="og:site_name" content="井上 研一"><base href=https://inoccu.github.io/docs/watson/><title>「初めてのWatson 改訂版」コードリスト（Python SDK版） - 井上 研一</title><link rel=canonical href=https://inoccu.github.io/docs/watson/><link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel=stylesheet><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css integrity=sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=https://inoccu.github.io/css/coder.min.76681fdb0711c555514e38148a33b692f685093870cba0a00547d255d7518258.css integrity="sha256-dmgf2wcRxVVRTjgUijO2kvaFCThwy6CgBUfSVddRglg=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://inoccu.github.io/css/custom.css><link rel=icon type=image/png href=https://inoccu.github.io/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://inoccu.github.io/images/favicon-16x16.png sizes=16x16><meta name=generator content="Hugo 0.81.0"></head><body class=colorscheme-light><div id=back_to_top><a href=#></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://inoccu.github.io/>Inoue, Ken'ichi</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fas fa-bars"></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/profile/>プロフィール</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/profile/writing.html>執筆</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/profile/speaking.html>登壇</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/docs/>資料</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/search/>検索</a></li><li class=navigation-item><a class=navigation-link href=https://inoccu.github.io/contact/>お問い合わせ</a></li></ul></section></nav><div class=content><section class="container page"><article><header><h1>「初めてのWatson 改訂版」コードリスト（Python SDK版）</h1></header><p>書籍「初めてのWatson 改訂版～APIの用例と実践プログラミング」（井上研一＝著、リックテレコム＝刊）のコードリストをPython SDKを使用する形に変換したものです。<br><a href=http://www.ric.co.jp/book/contents/book_1128.html>出版社によるサポートサイト</a><br><a href=https://amzn.to/2ziUROV>Amazon.co.jpで購入</a></p><p>2020年5月版です。</p><h2 id=python-sdkのインストール>Python SDKのインストール</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#960050;background-color:#1e0010>!</span>pip install <span style=color:#f92672>--</span>upgrade ibm<span style=color:#f92672>-</span>watson
+</code></pre></div><p><a href=https://github.com/watson-developer-cloud/python-sdk>IBM Watson Python SDK GitHub</a></p><h2 id=chapter-43-natural-language-classifier>Chapter 4.3 Natural Language Classifier</h2><h3 id=nlc分類器の作成>NLC分類器の作成</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> ibm_watson <span style=color:#f92672>import</span> NaturalLanguageClassifierV1
+<span style=color:#f92672>from</span> ibm_cloud_sdk_core.authenticators <span style=color:#f92672>import</span> IAMAuthenticator
+<span style=color:#f92672>import</span> json
+
+nlc <span style=color:#f92672>=</span> NaturalLanguageClassifierV1(
+    authenticator<span style=color:#f92672>=</span>IAMAuthenticator(<span style=color:#e6db74>&#39;{apikey}&#39;</span>)
+)
+
+<span style=color:#75715e># ダラス以外のリージョンを指定する場合(例は東京リージョン)</span>
+<span style=color:#75715e># nlc.set_service_url(&#39;https://api.jp-tok.natural-language-classifier.watson.cloud.ibm.com&#39;)</span>
+
+<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;trainingdata.csv&#39;</span>, <span style=color:#e6db74>&#39;rb&#39;</span>) <span style=color:#66d9ef>as</span> training_data:
+    classifier <span style=color:#f92672>=</span> nlc<span style=color:#f92672>.</span>create_classifier(
+        training_data<span style=color:#f92672>=</span>training_data,
+        training_metadata<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{&#34;name&#34;: &#34;My Classifier&#34;,&#34;language&#34;: &#34;ja&#34;}&#39;</span>
+    )<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(classifier, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>))
+</code></pre></div><h3 id=nlc分類器の学習状況の取得>NLC分類器の学習状況の取得</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>nlc<span style=color:#f92672>.</span>get_classifier(<span style=color:#e6db74>&#39;{classifier_id}&#39;</span>)<span style=color:#f92672>.</span>get_result()
+</code></pre></div><h3 id=nlc分類器のテスト>NLC分類器のテスト</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>classes <span style=color:#f92672>=</span> nlc<span style=color:#f92672>.</span>classify(
+    <span style=color:#e6db74>&#39;{classifier_id}&#39;</span>,
+    <span style=color:#e6db74>&#39;お酒を飲みたい&#39;</span>)<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(classes, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h2 id=chapter-44-natural-language-understanding>Chapter 4.4 Natural Language Understanding</h2><h3 id=nluでのwebサイトからのキーワードなどの抽出>NLUでのWebサイトからのキーワードなどの抽出</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> ibm_watson <span style=color:#f92672>import</span> NaturalLanguageUnderstandingV1
+<span style=color:#f92672>from</span> ibm_cloud_sdk_core.authenticators <span style=color:#f92672>import</span> IAMAuthenticator
+<span style=color:#f92672>from</span> ibm_watson.natural_language_understanding_v1 <span style=color:#f92672>import</span> Features, EntitiesOptions, KeywordsOptions
+<span style=color:#f92672>import</span> json
+
+nlu <span style=color:#f92672>=</span> NaturalLanguageUnderstandingV1(
+    version<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;2019-07-12&#39;</span>,
+    authenticator<span style=color:#f92672>=</span>IAMAuthenticator(<span style=color:#e6db74>&#39;{apikey}&#39;</span>)
+)
+
+<span style=color:#75715e># ダラス以外のリージョンを指定する場合(例は東京リージョン)</span>
+<span style=color:#75715e># nlu.set_service_url(&#39;https://api.jp-tok.natural-language-understanding.watson.cloud.ibm.com&#39;)</span>
+
+response <span style=color:#f92672>=</span> nlu<span style=color:#f92672>.</span>analyze(
+    url<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;https://inoccu.com/profile/&#39;</span>,
+    features<span style=color:#f92672>=</span>Features(
+        entities<span style=color:#f92672>=</span>EntitiesOptions(emotion<span style=color:#f92672>=</span>True, sentiment<span style=color:#f92672>=</span>True),
+        keywords<span style=color:#f92672>=</span>KeywordsOptions(emotion<span style=color:#f92672>=</span>True, sentiment<span style=color:#f92672>=</span>True)
+    ),
+    language<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ja&#39;</span>
+)<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(response, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h2 id=chapter-45-discovery>Chapter 4.5 Discovery</h2><h3 id=環境の作成>環境の作成</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> ibm_watson <span style=color:#f92672>import</span> DiscoveryV1
+<span style=color:#f92672>from</span> ibm_cloud_sdk_core.authenticators <span style=color:#f92672>import</span> IAMAuthenticator
+<span style=color:#f92672>import</span> json
+
+discovery <span style=color:#f92672>=</span> DiscoveryV1(
+    version<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;2019-07-12&#39;</span>,
+    authenticator<span style=color:#f92672>=</span>IAMAuthenticator(<span style=color:#e6db74>&#39;{apikey}&#39;</span>)
+)
+
+<span style=color:#75715e># ダラス以外のリージョンを指定する場合(例は東京リージョン)</span>
+<span style=color:#75715e># discovery.set_service_url(&#39;https://api.jp-tok.discovery.watson.cloud.ibm.com&#39;)</span>
+
+environment <span style=color:#f92672>=</span> discovery<span style=color:#f92672>.</span>create_environment(name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;My Environment&#39;</span>, size<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;LT&#39;</span>)<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(environment, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h3 id=環境情報の取得>環境情報の取得</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>discovery<span style=color:#f92672>.</span>get_environment(<span style=color:#e6db74>&#39;{environment_id}&#39;</span>)<span style=color:#f92672>.</span>get_result()
+</code></pre></div><h3 id=コレクションの作成>コレクションの作成</h3><p>まず、configurationを取得する。environemntにはデフォルトのconfigurationが存在するため、それを使用できる。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>discovery<span style=color:#f92672>.</span>list_configurations(<span style=color:#e6db74>&#39;{environment_id}&#39;</span>)<span style=color:#f92672>.</span>get_result()
+</code></pre></div><p>次にコレクションを作成する。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>collection <span style=color:#f92672>=</span> discovery<span style=color:#f92672>.</span>create_collection(
+    environment_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{environment_id}&#39;</span>,
+    configuration_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{configuration_id}&#39;</span>,
+    name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;My Collection&#39;</span>,
+    language<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ja&#39;</span>
+)<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(collection, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h3 id=文書の追加>文書の追加</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;place-1.json&#39;</span>) <span style=color:#66d9ef>as</span> f:
+    result <span style=color:#f92672>=</span> discovery<span style=color:#f92672>.</span>add_document(
+        <span style=color:#e6db74>&#39;{environment_id}&#39;</span>,
+        <span style=color:#e6db74>&#39;{collection_id}&#39;</span>,
+        file<span style=color:#f92672>=</span>f
+    )<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(result, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h3 id=コレクション情報の取得>コレクション情報の取得</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>discovery<span style=color:#f92672>.</span>get_collection(
+    <span style=color:#e6db74>&#39;{environment_id}&#39;</span>,
+    <span style=color:#e6db74>&#39;{collection_id}&#39;</span>
+)<span style=color:#f92672>.</span>get_result()
+</code></pre></div><h3 id=自然言語による検索>自然言語による検索</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>response <span style=color:#f92672>=</span> discovery<span style=color:#f92672>.</span>query(
+    <span style=color:#e6db74>&#39;{environment_id}&#39;</span>,
+    <span style=color:#e6db74>&#39;{collection_id}&#39;</span>,
+    natural_language_query<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;新宿の名所&#39;</span>
+)<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(response, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h3 id=discovery-query-languagedqlによる検索>Discovery Query Language（DQL）による検索</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>response <span style=color:#f92672>=</span> discovery<span style=color:#f92672>.</span>query(
+    <span style=color:#e6db74>&#39;{environment_id}&#39;</span>,
+    <span style=color:#e6db74>&#39;{collection_id}&#39;</span>,
+    query<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;enriched_text.entities.text::&#34;北村銀太郎&#34;&#39;</span>
+)<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(response, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h3 id=訓練データの追加>訓練データの追加</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> ibm_watson.discovery_v1 <span style=color:#f92672>import</span> TrainingExample
+
+response <span style=color:#f92672>=</span> discovery<span style=color:#f92672>.</span>add_training_data(
+    <span style=color:#e6db74>&#39;{environment_id}&#39;</span>,
+    <span style=color:#e6db74>&#39;{collection_id}&#39;</span>,
+    natural_language_query<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;落語の寄席を教えて&#39;</span>,
+    examples<span style=color:#f92672>=</span>[
+        TrainingExample(document_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;{document_id}&#39;</span>, relevance<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>)
+    ]
+)<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(response, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h2 id=chapter-47-speech-to-textとtext-to-speech>Chapter 4.7 Speech To TextとText To Speech</h2><h3 id=音声ファイルを文字列に変換>音声ファイルを文字列に変換</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> ibm_watson <span style=color:#f92672>import</span> SpeechToTextV1
+<span style=color:#f92672>from</span> ibm_cloud_sdk_core.authenticators <span style=color:#f92672>import</span> IAMAuthenticator
+<span style=color:#f92672>import</span> json
+
+stt <span style=color:#f92672>=</span> SpeechToTextV1(
+    authenticator<span style=color:#f92672>=</span>IAMAuthenticator(<span style=color:#e6db74>&#39;{apikey}&#39;</span>)
+)
+
+<span style=color:#75715e># ダラス以外のリージョンを指定する場合(例は東京リージョン)</span>
+<span style=color:#75715e># stt.set_service_url(&#39;https://api.jp-tok.speech-to-text.watson.cloud.ibm.com&#39;)</span>
+
+<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;recoding.flac&#39;</span>, <span style=color:#e6db74>&#39;rb&#39;</span>) <span style=color:#66d9ef>as</span> f:
+    response <span style=color:#f92672>=</span> stt<span style=color:#f92672>.</span>recognize(
+        audio<span style=color:#f92672>=</span>f,
+        content_type<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;audio/flac&#39;</span>,
+        model<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ja-JP_BroadbandModel&#39;</span>,
+        word_alternatives_threshold<span style=color:#f92672>=</span><span style=color:#ae81ff>0.9</span>
+    )<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(response, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h3 id=文字列を音声ファイルに変換>文字列を音声ファイルに変換</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> ibm_watson <span style=color:#f92672>import</span> TextToSpeechV1
+<span style=color:#f92672>from</span> ibm_cloud_sdk_core.authenticators <span style=color:#f92672>import</span> IAMAuthenticator
+<span style=color:#f92672>import</span> json
+
+tts <span style=color:#f92672>=</span> TextToSpeechV1(
+    authenticator<span style=color:#f92672>=</span>IAMAuthenticator(<span style=color:#e6db74>&#39;{apikey}&#39;</span>)
+)
+
+<span style=color:#75715e># ダラス以外のリージョンを指定する場合(例は東京リージョン)</span>
+<span style=color:#75715e># tts.set_service_url(&#39;https://api.jp-tok.text-to-speech.watson.cloud.ibm.com&#39;)</span>
+
+<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;speech.flac&#39;</span>, <span style=color:#e6db74>&#39;wb&#39;</span>) <span style=color:#66d9ef>as</span> f:
+    f<span style=color:#f92672>.</span>write(
+        tts<span style=color:#f92672>.</span>synthesize(
+            <span style=color:#e6db74>&#39;寿限無寿限無&#39;</span>,
+            accept<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;audio/flac&#39;</span>,
+            voice<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ja-JP_EmiVoice&#39;</span>
+        )<span style=color:#f92672>.</span>get_result()<span style=color:#f92672>.</span>content
+    )
+</code></pre></div><h2 id=chapter-48-visual-recognition>Chapter 4.8 Visual Recognition</h2><h3 id=独自の分類器を作成>独自の分類器を作成</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> ibm_watson <span style=color:#f92672>import</span> VisualRecognitionV3
+<span style=color:#f92672>from</span> ibm_cloud_sdk_core.authenticators <span style=color:#f92672>import</span> IAMAuthenticator
+<span style=color:#f92672>import</span> json
+
+vr <span style=color:#f92672>=</span> VisualRecognitionV3(
+    version<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;2018-03-19&#39;</span>,
+    authenticator<span style=color:#f92672>=</span>IAMAuthenticator(<span style=color:#e6db74>&#39;{apikey}&#39;</span>)
+)
+
+<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;dogs.zip&#39;</span>, <span style=color:#e6db74>&#39;rb&#39;</span>) <span style=color:#66d9ef>as</span> dogs:
+    <span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;cats.zip&#39;</span>, <span style=color:#e6db74>&#39;rb&#39;</span>) <span style=color:#66d9ef>as</span> cats:
+        model <span style=color:#f92672>=</span> vr<span style=color:#f92672>.</span>create_classifier(
+            <span style=color:#e6db74>&#39;dog-cat&#39;</span>,
+            positive_examples<span style=color:#f92672>=</span>{
+                <span style=color:#e6db74>&#39;dog&#39;</span>: dogs,
+                <span style=color:#e6db74>&#39;cat&#39;</span>: cats
+            }
+        )<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(model, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div><h3 id=独自の分類器の学習状況の取得>独自の分類器の学習状況の取得</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>vr<span style=color:#f92672>.</span>get_classifier(<span style=color:#e6db74>&#39;{classifier_id}&#39;</span>)<span style=color:#f92672>.</span>get_result()
+</code></pre></div><h3 id=独自の分類器を使用した分類>独自の分類器を使用した分類</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;cat.jpg&#39;</span>, <span style=color:#e6db74>&#39;rb&#39;</span>) <span style=color:#66d9ef>as</span> f:
+    response <span style=color:#f92672>=</span> vr<span style=color:#f92672>.</span>classify(
+        images_file<span style=color:#f92672>=</span>f,
+        threshold<span style=color:#f92672>=</span><span style=color:#ae81ff>0.6</span>,
+        classifier_ids<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#39;{classifier_id}&#39;</span>],
+        owners<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#39;me&#39;</span>]
+    )<span style=color:#f92672>.</span>get_result()
+<span style=color:#66d9ef>print</span>(json<span style=color:#f92672>.</span>dumps(response, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, ensure_ascii<span style=color:#f92672>=</span>False))
+</code></pre></div></article></section></div><footer class=footer><section class=container>©
+2020 -
+2021
+Inoue, Ken'ichi</section></footer><script src=https://code.jquery.com/jquery-3.5.0.min.js integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/typed.js@2.0.11></script><script src=https://inoccu.github.io/js/main.js></script></main><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-2794204-22','auto'),ga('send','pageview'))</script></body></html>

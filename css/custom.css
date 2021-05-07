@@ -1,0 +1,10 @@
+.typed-hedding {
+    display: inline-block;
+    width: 340px;
+}
+
+.typed {
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid red;
+}
