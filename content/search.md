@@ -10,10 +10,11 @@ title: 検索
 - Facebook https://www.facebook.com/kenichi.inoue
 - qiita https://qiita.com/inoccu
 - SlideShare https://www.slideshare.net/inoccu
-- 株式会社ビビンコ社長ブログ https://vivinko.com/blog
+- ブログ（株式会社ビビンコWebサイト） https://vivinko.com/inoue/blog
 
 ## Google カスタム検索
 
 井上研一が書いた文章などを Google で検索できます。
 
 {{< gcse >}}
+

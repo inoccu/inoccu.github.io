@@ -10,7 +10,7 @@ noshowpages: true
 ITエンジニア／経済産業省推進資格ITコーディネータ。  
 [株式会社ビビンコ](https://vivinko.com)代表取締役、[Tech Garden School](https://techgardenschool.com)講師、[SEプラス](https://www.seplus.jp/dokushuzemi/)講師。
 
-1979年、福岡県北九州市出身。神奈川県横浜市在住。（2020年内に北九州市にUターン予定）  
+1979年、北九州市若松区出身。2000年から東京・横浜で暮らし、2020年11月より北九州市にUターン。  
 九州電子計算機専門学校小倉校（現・KCS北九州情報専門学校）卒業。  
 産業能率大学 情報マネジメント学部卒業。  
 放送大学 大学院文化科学研究科に修士選科生として在籍中。
@@ -33,6 +33,11 @@ ITエンジニア／経済産業省推進資格ITコーディネータ。
   ※IoT＋AIもくもく勉強会・北九州でIoTグループとして
 - IBM Champion for 2018
 
+### ラジオ
+
+- [FM KITAQ「夢をかなえる研究所」](https://inoccu.com/blog/2021/01/28/131637.html)（2021年1月）
+- [CROSS FM「Takagi Startup Booster」](https://radiotalk.jp/talk/405800)（2020年11月）※ラジオ音声が流れます
+
 ### 記事掲載
 
 - [ふくおか経済 2020年9月号](https://www.fukuoka-keizai.co.jp/backnumber/%e3%81%b5%e3%81%8f%e3%81%8a%e3%81%8b%e7%b5%8c%e6%b8%88-vol-385-2/) Fukuokan's Voice  
@@ -46,10 +51,6 @@ ITエンジニア／経済産業省推進資格ITコーディネータ。
 - [日刊工業新聞「茨城県IoT推進ラボ 事例報告会と見学会開く」](https://www.nikkan.co.jp/articles/view/503986)  
   ※ITコーディネータとしての登壇に関する記事（2019年1月）
 
-### ラジオ
-
-- CROSS FM Takagi Startup Booster（2020年11月）
-
 ### 委員等
 
 - 文部科学省委託事業 学校法人中央情報学園 早稲田文理専門学校「専修学校による地域産業中核的人材養成事業」人工知能（AI）分野中核的人材育成のための首都圏産学連携協議会 委員（2017～2019年度）
@@ -58,3 +59,4 @@ ITエンジニア／経済産業省推進資格ITコーディネータ。
 - 経済産業省 [平成29年度省エネルギー政策立案のための調査（中堅・中小企業向けIoTツール・レシピ情報取りまとめ調査）](http://www.meti.go.jp/policy/mono_info_service/mono/smart_mono/index.html) 調査分析企画実行WG（2017年度）
 - IBM BlueHub インキュベーションプログラム（第3期）メンター（2016年度）
 - ITコーディネータ協会 ITCプロセスガイドライン改訂WG（2016年）
+
