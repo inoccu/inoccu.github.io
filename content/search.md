@@ -16,7 +16,7 @@ title: 検索
 - Facebook https://www.facebook.com/kenichi.inoue
 - qiita https://qiita.com/inoccu
 - SlideShare https://www.slideshare.net/inoccu
-- ブログ（株式会社ビビンコWebサイト） https://vivinko.com/inoue/blog
+- Think Globally, Act Locally（株式会社ビビンコ ブログ） https://vivinko.com/inoue/blog
 
 ## 動画
 
