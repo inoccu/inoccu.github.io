@@ -40,6 +40,8 @@ ITエンジニア／経済産業省推進資格ITコーディネータ。
 
 ### 記事掲載
 
+- [SEプラス「AI のハードルを下げて、 AI で何かを生み出す人を増やしたい！」](https://www.seplus.jp/dokushuzemi/blog/2021/05/instructor_inoue_kenichi.html)  
+  ※講師インタビュー記事（2021年5月）
 - [ふくおか経済 2020年9月号](https://www.fukuoka-keizai.co.jp/backnumber/%e3%81%b5%e3%81%8f%e3%81%8a%e3%81%8b%e7%b5%8c%e6%b8%88-vol-385-2/) Fukuokan's Voice  
   ※インタビュー記事（2020年9月）
 - [HINTs 生産性PULS北九州 MEET UP INNOVATORS](http://ssl.city.kitakyushu.lg.jp/page/seisansei-up/innovators/05.html)  
