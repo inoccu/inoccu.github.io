@@ -18,6 +18,8 @@ noshowpages: true
 - [主成分分析の基礎](datascience/pca.html)
 - [判別分析の基礎](datascience/discriminant.html)
 - [クラスター分析の基礎](datascience/cluster.html)
+- [時系列分析の基礎](datascience/timeseries.html)
+- [画像認識の基礎（tf.keras.applications）](datascience/image-classification-keras.html)
 
 ## その他
 

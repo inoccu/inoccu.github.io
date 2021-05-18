@@ -22,5 +22,7 @@ title: 検索
 
 SEカレッジ Webinarに登壇した際のダイジェスト動画がYouTubeで公開されています。
 
-- SEカレッジ Webinar[「脱東京から創出　～地方発 ITビジネスのかたち～」](https://www.youtube.com/watch?v=d0RlBe-P_P0)　※ダイジェスト動画
-- SEカレッジ Webinar[「現役PdMに聞く！SEが抑えておきたいPdM思考とは？」](https://www.youtube.com/watch?v=CuaRIP8UmgM)　※ダイジェスト動画
+- SEカレッジ Webinar[「脱東京から創出　～地方発 ITビジネスのかたち～」](https://www.youtube.com/watch?v=d0RlBe-P_P0)
+- SEカレッジ Webinar[「現役PdMに聞く！SEが抑えておきたいPdM思考とは？」](https://www.youtube.com/watch?v=CuaRIP8UmgM)
+- SEカレッジ Webinar[「DX時代の人材育成　～ニューノーマルに必要な教育体制とは？～」](https://www.youtube.com/watch?v=A4CJBbEf4Lw)
+

@@ -3,7 +3,7 @@ title: 時系列分析の基礎
 date: 2020-10-01
 url: /docs/datascience/timeseries.html
 math: true
-draft: true
+draft: false
 ---
 
 ## 時系列分析の基礎
