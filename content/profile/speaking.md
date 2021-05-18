@@ -17,7 +17,7 @@ AI・IoTに強いITコーディネータとして、日本全国で登壇させ�
 - ITコーディネータ協会主催研修[「ITコンサルタントのためのデータ分析体験研修」](https://www.itc.or.jp/foritc/seminar/ai_data.html)
 - SEカレッジ Webinar[「脱東京から創出　～地方発 ITビジネスのかたち～」](https://www.youtube.com/watch?v=d0RlBe-P_P0)　※ダイジェスト動画
 - SEカレッジ Webinar[「現役PdMに聞く！SEが抑えておきたいPdM思考とは？」](https://www.youtube.com/watch?v=CuaRIP8UmgM)　※ダイジェスト動画
-- SEカレッジ Webinar「DX時代における人材育成」
+- SEカレッジ Webinar[「DX時代の人材育成　～ニューノーマルに必要な教育体制とは？～」](https://www.youtube.com/watch?v=A4CJBbEf4Lw)　※ダイジェスト動画
 - SEカレッジ Webinar「DX（Digital Transformation）とは」
 - SEカレッジ「Kaggleで学ぶ！機械学習エンジニア入門」
 - SEカレッジ「Watsonで体感するAIプロジェクト入門」／「ノーコードで体験するAIのキホン」
